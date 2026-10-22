@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gacha Anime Universe 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Falling cherry blossom petals -->
+<div class="petal-container" id="petalContainer" aria-hidden="true"></div>
+
+
+<header class="topbar">
+  <a href="#" class="logo" id="homeLink">🌸 GACHA UNIVERSE</a>
+  <div class="wallet">🪙 <span id="coinCount">100</span> Sakura Coins</div>
+</header>
+
+<main>
+  <!-- RETRO DESKTOP HOMEPAGE -->
+  <section id="home" class="screen hero home-screen">
+    <div class="hero-content">
+      <p class="eyebrow">✦ WELCOME TO YOUR LITTLE WORLD ✦</p>
+
+      <div class="desktop-window">
+        <div class="window-bar">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <span class="window-title">my-anime-world.exe</span>
+          <span class="window-symbol">♡</span>
+        </div>
+
+        <div class="desktop-content">
+          <div class="desktop-copy">
+            <p class="eyebrow">◕⩊◕ YOUR OWN LITTLE UNIVERSE</p>
+            <h1>Gacha Anime<br><span>Universe</span></h1>
+            <p class="desktop-description">
+              Your cozy corner of anime magic! Meet your favourite characters,
+              explore a dreamy Japanese street, and collect little moments of happiness.
+            </p>
+
+            <div class="desktop-stats">
+              <div class="desktop-stat"><span>10</span><small>CHARACTERS</small></div>
+              <div class="desktop-stat"><span>4</span><small>DESTINATIONS</small></div>
+              <div class="desktop-stat"><span>∞</span><small>ANIME MAGIC</small></div>
+            </div>
+
+            <button class="primary-btn enter-button" id="enterStreet" type="button">
+              🏮 ENTER JAPAN STREET ➜
+            </button>
+            <p class="desktop-footnote">♡ made with sakura dreams ♡</p>
+          </div>
+
+          <div class="desktop-art">
+            <div class="floating-deco deco-one">🥜</div>
+            <div class="floating-deco deco-two">✨</div>
+            <div class="floating-deco deco-three">♡</div>
+            <div class="desktop-picture">
+              <div class="picture-frame">
+                <img src="images/anya.jpg" alt="Anya Forger from Spy x Family">
+              </div>
+              <div class="picture-caption">YOUR LITTLE ANIME WORLD ♡</div>
+            </div>
+            <div class="desktop-sticker sticker-left">WAKU WAKU!</div>
+            <div class="desktop-sticker sticker-right">ANIMEEE!</div>
+          </div>
+        </div>
+
+        <div class="window-bottom">
+          <span>🌺 SYSTEM READY</span>
+          <span>♡ ANIME MODE: ON ♡</span>
+        </div>
+      </div>
+
+      <div class="hero-decoration">⋆｡‧˚ʚ🍓ɞ˚‧｡⋆</div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE JAPANESE STREET -->
+  <section id="street" class="screen hidden street-screen">
+    <div class="section-heading">
+      <p class="eyebrow">WELCOME TO さくら通り</p>
+      <h2>🏮 Sakura Street</h2>
+      <p>Choose a place and discover something magical!</p>
+    </div>
+
+    <div class="street-scene">
+      <div class="skyline">🌸　🌙　✨　🌸</div>
+      <div class="street-shops">
+        <button class="shop shop-gacha" data-shop="gacha" type="button">
+          <span class="shop-art">🎰</span>
+          <span class="shop-sign">GACHA SHOP</span>
+          <small>Summon characters</small>
+        </button>
+        <button class="shop shop-ramen" data-shop="ramen" type="button">
+          <span class="shop-art">🍜</span>
+          <span class="shop-sign">RAMEN HOUSE</span>
+          <small>Eat & earn coins</small>
+        </button>
+        <button class="shop shop-cafe" data-shop="cafe" type="button">
+          <span class="shop-art">☕</span>
+          <span class="shop-sign">ANIME CAFÉ</span>
+          <small>Collect a daily gift</small>
+        </button>
+        <button class="shop shop-shrine" data-shop="shrine" type="button">
+          <span class="shop-art">⛩️</span>
+          <span class="shop-sign">MYSTERY SHRINE</span>
+          <small>Try your luck</small>
+        </button>
+      </div>
+      <div class="street-road">✦ S A K U R A　S T R E E T ✦</div>
+    </div>
+
+    <div class="section-heading">
+      <h2>✨ Your Adventure</h2>
+      <p>Every location has a little surprise.</p>
+    </div>
+
+    <div id="activity" class="activity-panel">
+      <div class="activity-icon">🐾</div>
+      <h3>Choose your destination!</h3>
+      <p>Visit a shop above to begin.</p>
+    </div>
+
+    <div class="section-heading collection-heading">
+      <h2>📚 Character Collection</h2>
+      <p id="collectionProgress">0 / 10 characters collected</p>
+    </div>
+
+    <div class="collection-grid" id="collectionGrid"></div>
+
+    <div class="street-footer">
+      <button class="primary-btn" id="footerHome" type="button">↩ BACK TO ANIME HOME</button>
+      <p>♡ made with sakura dreams ♡</p>
+    </div>
+  </section>
+</main>
+
+<!-- GACHA MODAL -->
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <button class="close-btn" id="closeModal" type="button" aria-label="Close">✕</button>
+    <p class="eyebrow" id="modalEyebrow">MYSTERY CAPSULE</p>
+    <h2 id="modalTitle">Ready to summon?</h2>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
